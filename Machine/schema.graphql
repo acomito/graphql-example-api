@@ -1,0 +1,20 @@
+type MachineUtilizationDataItem {
+  id: ID
+  data: [String]
+}
+
+type MachineProductionDataItem {
+  id: ID
+  data: [String]
+}
+
+type Machine {
+  id: ID
+  utilization: [MachineUtilizationDataItem]
+  production: [MachineProductionDataItem]
+}
+
+type Query {
+  machine(dnxUuid: ID!): Machine
+  machines(range: String): [Machine]
+}
